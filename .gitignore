@@ -1,0 +1,38 @@
+# Ignore arquivos e pastas do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore arquivos de log
+*.log
+
+# Ignore arquivos de cache
+cache/
+*.cache
+
+.vscode/
+
+# Ignore dependências do Composer
+/vendor/
+
+# Ignore configurações específicas do IDE
+.vscode/
+*.code-workspace
+
+# Ignore arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Ignore arquivos gerados
+/public/storage
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Ignore outros arquivos temporários
+*.tmp
+*.swp
+*.bak
+*.old
+*.orig
