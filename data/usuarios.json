@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "nome": "Usu\u00e1rio Exemplo",
+        "email": "exemplo@site.com"
+    },
+    {
+        "id": 2,
+        "nome": "Outro Usu\u00e1rio",
+        "email": "outro@site.com"
+    },
+    {
+        "nome": "Jo\u00e3o Silva",
+        "email": "joao.silva@example.com",
+        "data_criacao": "13-05-2025 15:00:04",
+        "id": 3
+    },
+    {
+        "nome": "Jo\u00e3o Silva",
+        "email": "joao.silva@example.com",
+        "data_criacao": "13-05-2025 15:00:06",
+        "id": 4
+    }
+]
