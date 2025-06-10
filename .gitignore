@@ -1,38 +1,15 @@
-# Ignore arquivos e pastas do sistema operacional
-.DS_Store
-Thumbs.db
-
-# Ignore arquivos de log
-*.log
-
-# Ignore arquivos de cache
-cache/
-*.cache
-
-.vscode/
-
-# Ignore dependências do Composer
-/vendor/
-
-# Ignore configurações específicas do IDE
-.vscode/
-*.code-workspace
-
-# Ignore arquivos de ambiente
-.env
-.env.local
-.env.*.local
-
-# Ignore arquivos gerados
+/node_modules
+/public/hot
 /public/storage
 /storage/*.key
-/storage/framework/cache/*
-/storage/framework/sessions/*
-/storage/framework/views/*
-
-# Ignore outros arquivos temporários
-*.tmp
-*.swp
-*.bak
-*.old
-*.orig
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env.example
+.editorconfig
+.vscode/php-api-treinamento.code-workspace
