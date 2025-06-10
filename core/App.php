@@ -1,5 +1,6 @@
 <?php
 // /core/App.php
+namespace Core;
 
 class App {
     protected $controller = 'HomeController'; // Controller padrão

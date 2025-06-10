@@ -1,31 +1,40 @@
 <?php
-// /app/Models/User.php
 
-// (Opcional) Se você tiver um Model base, pode estendê-lo.
-// require_once ROOT_PATH . '/core/Model.php';
-// class User extends Model {
+namespace App\Models;
 
-class User {
-    // Em uma aplicação real, você teria propriedades e métodos
-    // para interagir com a tabela 'users' do banco de dados.
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-    public function getPrimeiroUsuario() {
-        // Simulação: buscaria o primeiro usuário no banco de dados.
-        // Aqui, apenas retornamos dados fictícios.
-        return [
-            'id' => 1,
-            'nome' => 'Usuário Exemplo',
-            'email' => 'exemplo@site.com'
-        ];
-    }
+class User extends Authenticatable
+{
+    use HasFactory, Notifiable;
 
-    public function getUsuarioPorId($id) {
-        // Simulação: buscaria um usuário por ID.
-        return [
-            'id' => $id,
-            'nome' => 'Usuário ' . $id,
-            'email' => 'usuario'.$id.'@site.com'
-        ];
-    }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }
-?>

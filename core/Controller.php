@@ -1,5 +1,6 @@
 <?php
 // /core/Controller.php
+namespace Core;
 
 class Controller {
 
@@ -7,8 +8,7 @@ class Controller {
      * Carrega um Model.
      * @param string $model Nome do Model
      * @return object Instância do Model
-     */
-    public function model($model) {
+     */    public function model($model) {
         // Verifica se o arquivo do model existe
         if (file_exists(APP_PATH . '/Models/' . ucfirst($model) . '.php')) {
             require_once APP_PATH . '/Models/' . ucfirst($model) . '.php';
@@ -16,7 +16,7 @@ class Controller {
             return new $modelClass();
         } else {
             // Lança um erro ou lida com a ausência do model
-            //die("Model '{$model}' não encontrado.");
+            throw new \Exception("Model '{$model}' não encontrado.");
         }
     }
 
@@ -31,7 +31,7 @@ class Controller {
         extract($data);
 
         $viewFile = APP_PATH . '/Views/' . $view . '.php';
-        // var_dump("Tentando carregar a view: " . $viewFile); // Linha de depuração temporária        
+        // var_dump("Tentando carregar a view: " . $viewFile); // Linha de depuração temporária
 
         // Verifica se o arquivo da view existe
         if (file_exists(APP_PATH . '/Views/' . $view . '.php')) {
@@ -59,5 +59,3 @@ class Controller {
         exit; // Termina o script após enviar a resposta JSON
     }
 }
-
-?>
