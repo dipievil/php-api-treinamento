@@ -34,6 +34,11 @@ jobs:
         mkdir -p database
         touch database/database.postgres
 
+    - name: Configure PostgreSQL connection
+      run: |
+        export WINDOWS_HOST=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+        echo "DB_HOST=$WINDOWS_HOST" >> .env
+
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
         DB_CONNECTION: pgsql
